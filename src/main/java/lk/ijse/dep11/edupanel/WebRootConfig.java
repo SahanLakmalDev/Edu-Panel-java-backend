@@ -19,15 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 @Configuration
-@PropertySource("/application.properties")
+@PropertySource("classpath:/application.properties")
 public class WebRootConfig {
-
-    @Autowired
-    private DataSource pool;
-    @Autowired
-    private Bucket bucket;
-
-
 
     @Bean(destroyMethod = "close")
     public HikariDataSource dataSource(Environment env){
